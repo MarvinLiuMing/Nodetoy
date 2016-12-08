@@ -21,9 +21,8 @@ var videoIds = [348, 259, 197, 134, 75];
 function getpageAsync(url) {
 
     return new Promise(function(resolve, reject) {
-    	var teststring = '正在爬取...'
-    	var bstring += teststring.toString('utf8')
-        console.log(bstring);
+
+        console.log('正在爬取...');
 
         http.get(url, function(res) {
 
