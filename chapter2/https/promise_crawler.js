@@ -29,7 +29,7 @@ function getpageAsync(url) {
             var html = '';
 
             res.on('data', function(data) {
-
+                console.log('正在爬取...'+data);
                 html += data;
 
             });
@@ -89,7 +89,7 @@ function getpageAsync(url) {
 var fetchCourseArray = [];
 
 videoIds.forEach(function(id) {
-
+    console.log('fetchCourseArray init')
     fetchCourseArray.push(getpageAsync(baseUrl + id));
 
 });
@@ -101,7 +101,7 @@ Promise
     .all(fetchCourseArray)
 
     .then(function(pages) {
-
+        console.log('promise then'+pages)
         var coursesData = [];
 
         pages.forEach(function(html) {
